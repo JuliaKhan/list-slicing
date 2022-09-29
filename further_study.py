@@ -45,8 +45,8 @@ def custom_append(input_list, value):
         True
 
     """
+
     input_list[-1:] = [input_list[-1], value]
-    pass
 
 
 def custom_extend(input_list, second_list):
@@ -64,9 +64,9 @@ def custom_extend(input_list, second_list):
         True
 
     """
+
     for item in second_list:
         custom_append(input_list, item)
-    pass
 
 
 def custom_insert(input_list, index, value):
@@ -83,11 +83,11 @@ def custom_insert(input_list, index, value):
         True
 
     """
+
     second_half = input_list[index:]
     input_list[:] = input_list[0:index]
     custom_append(input_list, value)
     custom_extend(input_list, second_half)
-    pass
 
 
 def custom_remove(input_list, value):
@@ -108,13 +108,12 @@ def custom_remove(input_list, value):
     count = 0
     for item in input_list:
         if item == value:
-            idx = count
-            break
+            del input_list[count]
+            return
         count += 1
+    
+    print(f"{value} not in list.")
 
-    # idx = input_list.index(value)
-    del input_list[idx]
-    pass
 
 
 def custom_pop(input_list):
